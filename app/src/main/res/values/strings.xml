@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">CALCULATOR</string>
-    <string name="first_number">enter a number</string>
-    <string name="second_number">enter another number</string>
+    <string name="number">Number</string>
     <string name="add">+</string>
     <string name="subtract">-</string>
     <string name="divide">÷</string>
