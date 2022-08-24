@@ -6,4 +6,5 @@
     <string name="divide">÷</string>
     <string name="multiply">×</string>
     <string name="answer">ANSWER</string>
+    <string name="power">^</string>
 </resources>
