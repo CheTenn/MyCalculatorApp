@@ -13,7 +13,7 @@
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/number"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:textColorHint="#757575"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +30,7 @@
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/number"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:textColorHint="#757575"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,7 @@
         android:id="@+id/addition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/grey"
+        android:backgroundTint="@color/red"
         android:onClick="findSum"
         android:text="@string/add"
         android:textSize="64sp"
@@ -82,13 +82,13 @@
         app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.596" />
+        app:layout_constraintVertical_bias="0.592" />
 
     <Button
         android:id="@+id/multiplication"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/grey"
+        android:backgroundTint="@color/red"
         android:onClick="findProduct"
         android:text="@string/multiply"
         android:textSize="64sp"
@@ -97,7 +97,7 @@
         app:layout_constraintHorizontal_bias="0.851"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.596" />
+        app:layout_constraintVertical_bias="0.59" />
 
     <TextView
         android:id="@+id/answer"
@@ -114,7 +114,7 @@
         android:id="@+id/power"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/red"
         android:onClick="findPower"
         android:text="@string/power"
         android:textSize="64sp"
@@ -127,9 +127,11 @@
 
     <Button
         android:id="@+id/clear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CLEAR"
+        android:layout_width="82dp"
+        android:layout_height="48dp"
+        android:backgroundTint="@color/grey"
+        android:text="@string/clear"
+        android:onClick="clear"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -139,12 +141,15 @@
 
     <Button
         android:id="@+id/useAnswer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Use Answer"
+        android:layout_width="100dp"
+        android:layout_height="52dp"
+        android:backgroundTint="@color/grey"
+        android:text="@string/use_answer"
+        android:onClick="useAnswer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
+        app:layout_constraintVertical_bias="0.622" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,4 +7,6 @@
     <string name="multiply">×</string>
     <string name="answer">ANSWER</string>
     <string name="power">^</string>
+    <string name="clear">CLEAR</string>
+    <string name="use_answer">Use Answer</string>
 </resources>

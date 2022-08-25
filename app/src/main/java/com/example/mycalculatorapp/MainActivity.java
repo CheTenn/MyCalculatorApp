@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
         if(number1ET.getText().toString().equals("") || number2ET.getText().toString().equals("")){
             makeToast("Please enter a number in each box");
         } else {
-            double num1 = Integer.parseInt((number1ET.getText().toString()));
-            double num2 = Integer.parseInt((number2ET.getText().toString()));
+            double num1 = Double.parseDouble((number1ET.getText().toString()));
+            double num2 = Double.parseDouble((number2ET.getText().toString()));
             double sum = num1 + num2;
 
             numberSumTV.setText("" + sum) ;
@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         if(number1ET.getText().toString().equals("") || number2ET.getText().toString().equals("")){
             makeToast("Please enter a number in each box");
         } else {
-            double num1 = Integer.parseInt((number1ET.getText().toString()));
-            double num2 = Integer.parseInt((number2ET.getText().toString()));
+            double num1 = Double.parseDouble((number1ET.getText().toString()));
+            double num2 = Double.parseDouble((number2ET.getText().toString()));
             double difference = num1 - num2;
 
             numberSumTV.setText("" + difference);
@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
         if(number1ET.getText().toString().equals("") || number2ET.getText().toString().equals("")){
             makeToast("Please enter a number in each box");
         } else {
-            double num1 = Integer.parseInt((number1ET.getText().toString()));
-            double num2 = Integer.parseInt((number2ET.getText().toString()));
+            double num1 = Double.parseDouble((number1ET.getText().toString()));
+            double num2 = Double.parseDouble((number2ET.getText().toString()));
             double product = num1 * num2;
 
             numberSumTV.setText("" + product);
@@ -71,9 +71,11 @@ public class MainActivity extends AppCompatActivity {
 
         if(number1ET.getText().toString().equals("") || number2ET.getText().toString().equals("")){
             makeToast("Please enter a number in each box");
+        } else if (Double.parseDouble(number2ET.getText().toString()) == 0) {
+            numberSumTV.setText("Undefined");
         } else {
-            double num1 = Integer.parseInt((number1ET.getText().toString()));
-            double num2 = Integer.parseInt((number2ET.getText().toString()));
+            double num1 = Double.parseDouble((number1ET.getText().toString()));
+            double num2 = Double.parseDouble((number2ET.getText().toString()));
             double quotient = num1 / num2;
 
             numberSumTV.setText("" + quotient);
@@ -88,11 +90,34 @@ public class MainActivity extends AppCompatActivity {
         if(number1ET.getText().toString().equals("") || number2ET.getText().toString().equals("")){
             makeToast("Please enter a number in each box");
         } else {
-            double num1 = Integer.parseInt((number1ET.getText().toString()));
-            double num2 = Integer.parseInt((number2ET.getText().toString()));
+            double num1 = Double.parseDouble((number1ET.getText().toString()));
+            double num2 = Double.parseDouble((number2ET.getText().toString()));
             double power = Math.pow(num1, num2);
 
-            numberSumTV.setText("" + power);
+            if(power > Integer.MAX_VALUE){
+                makeToast("Answer is too large!");
+            } else {
+                numberSumTV.setText("" + power);
+            }
+        }
+    }
+
+    public void clear(View view){
+        EditText number1ET = findViewById(R.id.firstNumber);
+        EditText number2ET = findViewById(R.id.secondNumber);
+
+        number1ET.setText("");
+        number2ET.setText("");
+    }
+
+    public void useAnswer(View view){
+        EditText number1ET = findViewById(R.id.firstNumber);
+        TextView numberSumTV = findViewById(R.id.answer);
+
+        if(numberSumTV.getText().toString().equals("")){
+            makeToast("Perform a calculation to use an answer");
+        } else {
+            number1ET.setText(numberSumTV.getText().toString());
         }
     }
 
