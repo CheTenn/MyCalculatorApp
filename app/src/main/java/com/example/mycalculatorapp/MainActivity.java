@@ -28,7 +28,11 @@ public class MainActivity extends AppCompatActivity {
             double num2 = Double.parseDouble((number2ET.getText().toString()));
             double sum = num1 + num2;
 
-            numberSumTV.setText("" + sum) ;
+            if(sum > Integer.MAX_VALUE){
+                makeToast("Answer is too large!");
+            } else {
+                numberSumTV.setText("" + sum);
+            } ;
         }
     }
 
@@ -44,7 +48,11 @@ public class MainActivity extends AppCompatActivity {
             double num2 = Double.parseDouble((number2ET.getText().toString()));
             double difference = num1 - num2;
 
-            numberSumTV.setText("" + difference);
+            if(difference > Integer.MAX_VALUE){
+                makeToast("Answer is too large!");
+            } else {
+                numberSumTV.setText("" + difference);
+            };
         }
     }
 
@@ -60,7 +68,11 @@ public class MainActivity extends AppCompatActivity {
             double num2 = Double.parseDouble((number2ET.getText().toString()));
             double product = num1 * num2;
 
-            numberSumTV.setText("" + product);
+            if(product > Integer.MAX_VALUE){
+                makeToast("Answer is too large!");
+            } else {
+                numberSumTV.setText("" + product);
+            }
         }
     }
 
@@ -78,7 +90,11 @@ public class MainActivity extends AppCompatActivity {
             double num2 = Double.parseDouble((number2ET.getText().toString()));
             double quotient = num1 / num2;
 
-            numberSumTV.setText("" + quotient);
+            if(quotient > Integer.MAX_VALUE){
+                makeToast("Answer is too large!");
+            } else {
+                numberSumTV.setText("" + quotient);
+            };
         }
     }
 
